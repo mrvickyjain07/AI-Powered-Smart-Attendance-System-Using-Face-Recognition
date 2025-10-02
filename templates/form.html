@@ -1,99 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Login V3</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-<link href="{{ url_for('static', filename='images/favicon.ico') }}" rel="stylesheet">
-<!--===============================================================================================-->
-<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+  <head>
+    <title>Register Student - WIT FACE RECOGNITION</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+        color: #333;
+      }
+      header {
+        background-color: #4682b4;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-title {
+        color: #4682b4;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #555;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      input[type="text"]:focus {
+        border-color: #4682b4;
+        outline: none;
+        box-shadow: 0 0 5px rgba(70, 130, 180, 0.3);
+      }
+      .btn-submit {
+        background-color: #4682b4;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+      }
+      .btn-submit:hover {
+        background-color: #36648b;
+      }
+      .instructions {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f0f8ff;
+        border-left: 5px solid #4682b4;
+        border-radius: 5px;
+      }
+      .instructions h3 {
+        margin-top: 0;
+        color: #4682b4;
+      }
+      .footer {
+        background-color: #4682b4;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WIT FACE RECOGNITION ATTENDANCE SYSTEM</h1>
+    </header>
 
-<!--===============================================================================================-->
-<link href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-	
-<!--===============================================================================================-->
-<link href="{{ url_for('static', filename='fonts/iconic/css/material-design-iconic-font.min.css') }}" rel="stylesheet" type="text/css">
+    <div class="container">
+      <h2 class="form-title">Register New Student</h2>
 
-<!--===============================================================================================-->
-<link href="{{ url_for('static', filename='vendor/animate/animate.css') }}" rel="stylesheet" type="text/css">
+      <form action="/name" method="POST">
+        <div class="form-group">
+          <label for="name1">Student Name</label>
+          <input
+            type="text"
+            id="name1"
+            name="name1"
+            placeholder="Enter student's full name"
+            required
+          />
+        </div>
 
-<!--===============================================================================================-->
+        <div class="form-group">
+          <label for="name2">Student ID</label>
+          <input
+            type="text"
+            id="name2"
+            name="name2"
+            placeholder="Enter student's ID number"
+            required
+          />
+        </div>
 
-<link href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" type="text/css">
+        <button type="submit" class="btn-submit">Take Photo & Register</button>
+      </form>
 
-<!--===============================================================================================-->
+      <div class="instructions">
+        <h3>Registration Instructions</h3>
+        <p>After clicking the button, a camera window will open:</p>
+        <ol>
+          <li>Make sure there is good lighting on your face</li>
+          <li>Look directly at the camera</li>
+          <li>Press the SPACE key to capture your photo</li>
+          <li>Press the ESC key to cancel</li>
+        </ol>
+      </div>
+    </div>
 
-<link href="{{ url_for('static', filename='vendor/animsition/css/animsition.min.css') }}" rel="stylesheet" type="text/css">
-
-<!--===============================================================================================-->
-
-<link href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}" rel="stylesheet" type="text/css">
-	
-<!--===============================================================================================-->	
-
-<link href="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.css') }}" rel="stylesheet" type="text/css">
-	
-<!--===============================================================================================-->
-<link href="{{ url_for('static', filename='css/util.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
-
-<!--===============================================================================================-->
-</head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-color: #1b1e21;">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="/data" method="POST">
-					<span class="login100-form-logo">
-					<img src="static/key-person-dark.png">
-						<!--<i class="zmdi zmdi-landscape"></i> -->
-					</span>
-
-					<span class="login100-form-title p-b-34 p-t-27">
-						Admin Login
-					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="Username" required>
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password" required>
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
-</body>
+    <div class="footer">&copy; 2023 WIT Face Recognition Attendance System</div>
+  </body>
 </html>

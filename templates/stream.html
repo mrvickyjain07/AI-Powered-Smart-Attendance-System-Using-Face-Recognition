@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIT FACE RECOGNITION ATTENDANCE SYSTEM</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff; /* Light sky blue background */
+        color: #333;
+      }
+      header {
+        background-color: #4682b4; /* Steel blue header */
+        color: white;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      .video-container {
+        margin: 20px auto;
+        max-width: 800px;
+        border: 2px solid #4682b4;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .video-feed {
+        width: 100%;
+        height: auto;
+      }
+      .instructions {
+        background-color: #e6f2ff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        border-left: 4px solid #4682b4;
+        font-size: 16px;
+      }
+      .btn {
+        background-color: #4682b4;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #36648b;
+      }
+      .footer {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #4682b4;
+        color: white;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WIT FACE RECOGNITION ATTENDANCE SYSTEM</h1>
+    </header>
+
+    <div class="container">
+      <h2>Group Attendance Camera Feed</h2>
+      <p class="instructions">
+        Position all students in front of the camera. Multiple students can be
+        recognized at once.
+      </p>
+      <div class="video-container">
+        <img
+          src="http://192.168.106.210:8080/?action=stream"
+          class="video-feed"
+          alt="Video Feed"
+        />
+      </div>
+      <a href="{{ url_for('recognize_and_mark') }}" class="btn"
+        >Mark Group Attendance</a
+      >
+      <a href="{{ url_for('recognize') }}" class="btn">Back to Main</a>
+    </div>
+
+    <div class="footer">&copy; 2023 WIT Face Recognition Attendance System</div>
+  </body>
+</html>

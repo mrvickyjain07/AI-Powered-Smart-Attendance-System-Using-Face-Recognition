@@ -55,11 +55,11 @@ Here's the link of the [Youtube](https://youtu.be/JKSU7lbZ3ZE) video demonstrati
 
 
 ### User Interface Demo
-- Fig.1: Home page of FRAMS
+- Fig.1: Home page of WIT
   
   ![image](https://github.com/amlanmohanty1/face-recognition-attendance-management-system-with-PowerBI-dashboard/assets/72063042/b5f28977-3781-4091-bd69-e2bdd392a548)
 
-- Fig.2: Attendance Punching using FRAMS
+- Fig.2: Attendance Punching using WIT
   
   ![image](https://github.com/amlanmohanty1/face-recognition-attendance-management-system-with-PowerBI-dashboard/assets/72063042/2ef80327-c75e-4c5e-810d-b5b6387b6dd2)
 
@@ -86,5 +86,5 @@ Here's the link of the [Youtube](https://youtu.be/JKSU7lbZ3ZE) video demonstrati
   ![image](https://github.com/amlanmohanty1/face-recognition-attendance-management-system-with-PowerBI-dashboard/assets/72063042/532a47ce-fd9b-4b6a-9ef8-effd19b22dc2)
 
 
-### License
+
 This project is licensed under the MIT License. Check out the [LICENSE](LICENSE) file for more details. 
