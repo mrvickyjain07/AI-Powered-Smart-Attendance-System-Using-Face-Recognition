@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Complete - WIT FACE RECOGNITION</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+        color: #333;
+      }
+      header {
+        background-color: #4682b4;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .success-icon {
+        color: #4682b4;
+        font-size: 72px;
+        margin-bottom: 20px;
+      }
+      .message {
+        font-size: 20px;
+        color: #4682b4;
+        margin-bottom: 30px;
+      }
+      .btn {
+        background-color: #4682b4;
+        color: white;
+        padding: 12px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #36648b;
+      }
+      .footer {
+        background-color: #4682b4;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WIT FACE RECOGNITION ATTENDANCE SYSTEM</h1>
+    </header>
+
+    <div class="container">
+      <div class="success-icon">✓</div>
+      <h2>Registration Complete</h2>
+      <div class="message">{{ message }}</div>
+      <p>
+        The student has been successfully registered in the system and can now
+        mark attendance using facial recognition.
+      </p>
+
+      <a href="{{ url_for('name') }}" class="btn">Register Another Student</a>
+      <a href="{{ url_for('recognize') }}" class="btn">Back to Main</a>
+    </div>
+
+    <div class="footer">&copy; 2023 WIT Face Recognition Attendance System</div>
+  </body>
+</html>
